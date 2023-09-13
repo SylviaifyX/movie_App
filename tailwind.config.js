@@ -23,9 +23,9 @@ export default {
      
     },
     extend: {
-      backgroundImage: {
-        'banner': "url('./src/assets/Poster.jpg')",
-      },
+      // backgroundImage: {
+      //   'banner': "url('./assets/Poster.jpg')",
+      // },
     },
   },
   plugins: [],
