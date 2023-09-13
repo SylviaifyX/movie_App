@@ -1,6 +1,6 @@
 
 import image from "./../../assets/tv.png"
-import image1 from "./../../assets/menu.png"
+import image1 from "./../../assets/Menu.png"
 import SearchIcon from '@mui/icons-material/Search';
 
 
