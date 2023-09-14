@@ -1,48 +1,55 @@
 
 import {
-  createBrowserRouter,
-  RouterProvider,
-  Outlet,
+  BrowserRouter,
+  Route,
+  Routes,
+  // Outlet,
 } from "react-router-dom";
-import Navbar from "./Component/Navbar/nav";
-import Footer from "./Component/Footer/footer"
 import Home from "./Layout/Home/home";
+import Movie_id from "./Layout/Movie_id/movieId"
 
 
+// const Layout = () => {
+//   return (
+//     <div>
+//       <Navbar/>
+//       <Outlet/>
+//       <Footer/>
+//     </div>
+//   )
 
-const Layout = () => {
-  return (
-    <div>
-      <Navbar/>
-      <Outlet/>
-      <Footer/>
-    </div>
-  )
+// }
 
-}
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <Layout/>,
+//     children: [
+//       {
+//         path: "/",
+//         element:<Home/>
+//       },
+//       {
+//          path: "/movies/:id",
+//          element:<Movie_id />
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout/>,
-    children: [
-      {
-        path: "/",
-        element:<Home/>
-      },
-      // {
-      //    path: "/movies/:id",
-      //    element:<movieList/>
-      //  }
-    ]
-  },
-])
+//        }
+//     ]
+//   },
+// ])
 
 function App() {
 
   return (
     <>
-      <RouterProvider router={router} />
+      <BrowserRouter>
+        <div>
+          <Routes>
+            <Route path ="/" element ={<Home/>}/>
+            <Route path ="movies/:id"element ={<Movie_id/>}/>
+          </Routes>
+        </div>
+      </BrowserRouter>
 
     </>
   )
