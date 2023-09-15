@@ -37,7 +37,7 @@ function Movie() {
     }, []);
 
     return (
-        <div>
+        <div className="max-w-[1200px] mx-auto">
             <div className="flex items-center justify-evenly">
                 <div className="mt-[30px]">
                     <h1 className="font-bold text-xl">Featured Movies</h1>
