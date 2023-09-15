@@ -1,5 +1,5 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom/client";
+import React from "react";
+import ReactDOM from "react-dom/client";
 import './index.css'
 import Home from "./Layout/Home/home";
 import Movie_id from "./Layout/Movie_id/movieId"
