@@ -84,21 +84,21 @@ function Movie_id() {
 
                 <div className="md:w-[80%] flex flex-col">
                     {movieInfo ? <div className="h-[500px] mx-[20px] mt-[20px]">
-                        <img className="h-full w-full object-cover" src={`https://image.tmdb.org/t/p/original/${movieInfo.backdrop_path}`} alt="" />
+                        <img className="h-full w-full object-cover"  src={`https://image.tmdb.org/t/p/original/${movieInfo.backdrop_path}`} alt="" />
                     </div> : "loading"}
                     {movieInfo ? <div className=" flex flex-col mx-[20px]">
                         <div className="flex">
                             <div className="flex flex-col w-[70%]">
                                 <div className="flex mt-[20px]">
                                     <div>
-                                        <p className="space-x-[20px]">
-                                            <span className="font-bold">{movieInfo.title} </span>
-                                            <span className="font-bold">. 2022</span>
+                                        <p className="space-x-[10px]">
+                                            <span className="font-bold" data-testid="movie-title">{movieInfo.title} </span>
+                                            <span className="font-bold" data-testid="movie-release-date">{new Date(movieInfo.release_date).toUTCString()}</span>
                                             <span className="font-bold">. PG-13</span>
-                                            <span className="font-bold">{movieInfo.runtime}</span>
+                                            <span className="font-bold" data-testid="movie-runtime">{movieInfo.runtime} <span>Mins</span> </span>
                                         </p>
 
-                                        <p className="font-bold pt-[8px]">{movieInfo.overview}</p>
+                                        <p className="font-bold pt-[8px]" data-testid="movie-overview">{movieInfo.overview}</p>
                                     </div>
 
                                     <div className="space-x-[20px] ml-[30px]">

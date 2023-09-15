@@ -19,7 +19,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 function Movie() {
 
-    const [movie, setMovie] = useState([]);
+    const [movies, setMovies] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -27,7 +27,7 @@ function Movie() {
                 const response = await axios.get(
                     'https://api.themoviedb.org/3/movie/top_rated?api_key=543affbe47ead4f79984688d45815285'
                 );
-                setMovie(response.data.results.slice(0, 10));
+                setMovies(response.data.results.slice(0, 10));
             } catch (error) {
                 console.error(error);
             }
@@ -51,7 +51,7 @@ function Movie() {
             <div className="grid grid-cols-1 p-[20px] xs:grid-cols-2 xs:gap-[8px] xs:p-[20px] sm:grid-cols-3 sm:gap-[8px] md:grid-cols-3 lg:grid-cols-4
                 items-center justify-center mt-[30px] md:p-3.5 sm:p-[20px]">
                     
-                {movie.map((movie) => {
+                {movies.map((movie) => {
                     return <MovieGrid movie={movie} key={movie.id} movieid={movie.id} />
                 })}
             </div>
